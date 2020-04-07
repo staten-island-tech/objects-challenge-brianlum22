@@ -62,20 +62,21 @@ const presidents = [
    
   //BONUS write a script to check if LBJ was a 2 term president. IF he was then alert("LBJ served two terms") else alert "LBJ was one and done"
 
-  //1)
-    presidents = presidents.filter(function (item) {
-    return !item.string.includes("R");
-    });
-    console.log(presidents); 
+//1)
+    const Republicans = presidents.filter(function (president) {
+        return president.party == "R";
+    }) 
+    console.log(Republicans);
+//2)
+    const republicansOneTerm = presidents.filter(function (president) {
+    if (president.party == "R"){
+        return president.terms == "1";
+    }})
+    console.log(republicansOneTerm);
+//3) 
+    let lastThree = presidents.slice(9, 12);
+    console.log(lastThree);
 
-  //2)
-    presidents = presidents.filter(function (item) {
-    return !item.string.includes("D");
-    });
-    console.log(presidents); 
-  //3)
-    presidents = presidents.filter(function (item) {
-    return !name.includes("John F. Kennedy", "Lyndon Johnson", "Dwight Eisenhower");
-    });
-    console.log(presidents);
 
+    
+    
